@@ -92,7 +92,7 @@ void ribi::WtEncrangerMainDialog::ShowMain()
   this->addWidget(new Wt::WBreak);
   this->addWidget(new Wt::WBreak);
   //Arrow down
-  this->addWidget(new Wt::WImage("ToolEncrangerArrowDown16x16.png"));
+  this->addWidget(new Wt::WImage("EncrangerArrowDown16x16.png"));
   //Encrypt button
   {
     Wt::WPushButton * const button = new Wt::WPushButton("Encrypt");
@@ -101,14 +101,14 @@ void ribi::WtEncrangerMainDialog::ShowMain()
     this->addWidget(button);
   }
   //Arrow down
-  this->addWidget(new Wt::WImage("ToolEncrangerArrowDown16x16.png"));
+  this->addWidget(new Wt::WImage("EncrangerArrowDown16x16.png"));
   this->addWidget(new Wt::WLabel("Key: "));
   {
     m_edit_key = new Wt::WLineEdit("12345");
     this->addWidget(m_edit_key);
   }
   //Arrow up
-  this->addWidget(new Wt::WImage("ToolEncrangerArrowUp16x16.png"));
+  this->addWidget(new Wt::WImage("EncrangerArrowUp16x16.png"));
   //Deencrypt button
   {
     Wt::WPushButton * const button = new Wt::WPushButton("Deencrypt");
@@ -117,7 +117,7 @@ void ribi::WtEncrangerMainDialog::ShowMain()
     this->addWidget(button);
   }
   //Arrow up
-  this->addWidget(new Wt::WImage("ToolEncrangerArrowUp16x16.png"));
+  this->addWidget(new Wt::WImage("EncrangerArrowUp16x16.png"));
   this->addWidget(new Wt::WBreak);
   this->addWidget(new Wt::WBreak);
   //Encrypted text

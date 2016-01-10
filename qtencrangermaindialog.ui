@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>406</width>
-    <height>104</height>
+    <width>404</width>
+    <height>114</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Encranger</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="ToolEncranger.qrc">
+   <iconset>
     <normaloff>:/images/ToolEncrangerArrowDown16x16.png</normaloff>:/images/ToolEncrangerArrowDown16x16.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -24,7 +24,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="ToolEncranger.qrc">:/images/ToolEncrangerArrowUp34x34.png</pixmap>
+      <pixmap resource="Encranger.qrc">:/images/EncrangerArrowUp34x34.png</pixmap>
      </property>
     </widget>
    </item>
@@ -58,7 +58,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="ToolEncranger.qrc">:/images/ToolEncrangerArrowDown34x34.png</pixmap>
+      <pixmap resource="Encranger.qrc">:/images/EncrangerArrowDown34x34.png</pixmap>
      </property>
     </widget>
    </item>
@@ -83,7 +83,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ToolEncranger.qrc"/>
+  <include location="Encranger.qrc"/>
  </resources>
  <connections/>
 </ui>

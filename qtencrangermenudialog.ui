@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>170</width>
+    <width>162</width>
     <height>353</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
    <string>Encranger</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="ToolEncranger.qrc">
+   <iconset>
     <normaloff>:/images/ToolEncrangerArrowUp16x16.png</normaloff>:/images/ToolEncrangerArrowUp16x16.png</iconset>
   </property>
   <property name="styleSheet">
@@ -67,7 +67,7 @@ QPushButton { font: 48px  }</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="ToolEncranger.qrc">:/images/ToolEncrangerStart.png</pixmap>
+      <pixmap resource="Encranger.qrc">:/images/EncrangerStart.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -82,7 +82,7 @@ QPushButton { font: 48px  }</string>
   <tabstop>button_quit</tabstop>
  </tabstops>
  <resources>
-  <include location="ToolEncranger.qrc"/>
+  <include location="Encranger.qrc"/>
  </resources>
  <connections/>
 </ui>

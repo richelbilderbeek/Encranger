@@ -49,11 +49,11 @@ ribi::WtEncrangerMenuDialog::WtEncrangerMenuDialog()
   //Create resources
   {
     std::vector<std::string> image_names;
-    image_names.push_back("ToolEncrangerArrowDown16x16.png");
-    image_names.push_back("ToolEncrangerArrowDown34x34.png");
-    image_names.push_back("ToolEncrangerArrowUp16x16.png");
-    image_names.push_back("ToolEncrangerArrowUp34x34.png");
-    image_names.push_back("ToolEncrangerWelcome.png");
+    image_names.push_back("EncrangerArrowDown16x16.png");
+    image_names.push_back("EncrangerArrowDown34x34.png");
+    image_names.push_back("EncrangerArrowUp16x16.png");
+    image_names.push_back("EncrangerArrowUp34x34.png");
+    image_names.push_back("EncrangerWelcome.png");
     for(const auto filename: image_names)
     {
       if (!(QFile::exists(filename.c_str())))
@@ -137,7 +137,7 @@ Wt::WWidget * ribi::WtEncrangerMenuDialog::CreateNewWelcomeDialog() const
   new Wt::WBreak(dialog);
   new Wt::WBreak(dialog);
   Wt::WGroupBox * const box = new Wt::WGroupBox("Explanation",dialog);
-  box->addWidget(new Wt::WImage("ToolEncrangerWelcome.png"));
+  box->addWidget(new Wt::WImage("EncrangerWelcome.png"));
   return dialog;
 }
 

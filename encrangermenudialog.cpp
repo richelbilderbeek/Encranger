@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 Encranger, encryption tool
-Copyright (C) 2009-2015 Richel Bilderbeek
+Copyright (C) 2009-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "encrangermaindialog.h"
 #include "loopreader.h"
 #include "testtimer.h"
-#include "richelbilderbeekprogram.h"
 #include "trace.h"
 #pragma GCC diagnostic pop
 
@@ -111,10 +110,10 @@ ribi::About ribi::ToolEncrangerMenuDialog::GetAbout() const noexcept
 {
   About a(
     "Richel Bilderbeek",
-    "ToolEncranger",
+    "Encranger",
     "tool to test the Encranger class",
-    "the 1th of November 2013",
-    "2009-2015",
+    "January 10th of 2016",
+    "2009-2016",
     "http://www.richelbilderbeek.nl/ToolEncranger.htm",
     GetVersion(),
     GetVersionHistory());
@@ -143,17 +142,9 @@ ribi::Help ribi::ToolEncrangerMenuDialog::GetHelp() const noexcept
   );
 }
 
-boost::shared_ptr<const ribi::Program> ribi::ToolEncrangerMenuDialog::GetProgram() const noexcept
-{
-  const boost::shared_ptr<const ribi::Program> p(new ProgramEncranger);
-  assert(p);
-  return p;
-
-}
-
 std::string ribi::ToolEncrangerMenuDialog::GetVersion() const noexcept
 {
-  return "2.7";
+  return "3.0";
 }
 
 std::vector<std::string> ribi::ToolEncrangerMenuDialog::GetVersionHistory() const noexcept
@@ -168,7 +159,8 @@ std::vector<std::string> ribi::ToolEncrangerMenuDialog::GetVersionHistory() cons
     "2013-09-27: Version 2.5: conformized for ProjectRichelBilderbeek",
     "2013-11-01: Version 2.6: improved console version",
     "2014-04-01: Version 2.7: added silent mode",
-    "2014-07-21: Version 2.8: added picture to desktop menu"
+    "2014-07-21: Version 2.8: added picture to desktop menu",
+    "2016-01-10: Version 3.0: moved to own GitHub",
   };
 }
 
@@ -179,6 +171,10 @@ void ribi::ToolEncrangerMenuDialog::Test() noexcept
     static bool is_tested{false};
     if (is_tested) return;
     is_tested = true;
+  }
+  {
+    Encranger(42);
+    ToolEncrangerMainDialog();
   }
   const TestTimer test_timer(__func__,__FILE__,1.0);
   {
