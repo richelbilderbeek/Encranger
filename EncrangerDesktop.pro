@@ -4,9 +4,9 @@ include(../RibiLibraries/GeneralConsole.pri)
 include(../RibiLibraries/GeneralDesktop.pri)
 
 
-include(../RibiClasses/CppEncranger/CppEncranger.pri)
+include(CppEncranger.pri)
 include(../RibiClasses/CppLoopReader/CppLoopReader.pri)
-include(../Encranger/EncrangerDesktop.pri)
+include(EncrangerDesktop.pri)
 
 SOURCES += qtmain.cpp
 
