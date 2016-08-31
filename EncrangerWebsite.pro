@@ -10,3 +10,10 @@ include(../RibiClasses/CppLoopReader/CppLoopReader.pri)
 include(EncrangerWebsite.pri)
 
 SOURCES += wtmain.cpp
+
+# Thanks to Qt
+QMAKE_CXXFLAGS += -Wno-unused-variable
+
+# gcov
+QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+LIBS += -lgcov
