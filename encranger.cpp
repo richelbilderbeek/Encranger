@@ -1,23 +1,3 @@
-//---------------------------------------------------------------------------
-/*
-Encranger, encryption and de-encryption class
-Copyright (C) 2010-2016 Richel Bilderbeek
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-//---------------------------------------------------------------------------
-// From http://www.richelbilderbeek.nl/ToolMultiEncranger.htm
-//---------------------------------------------------------------------------
 #include "encranger.h"
 
 #include <algorithm>
@@ -28,17 +8,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <numeric>
 #include <vector>
 
-#include "testtimer.h"
-#include "trace.h"
 #include "loopreader.h"
 
 ribi::Encranger::Encranger(const int key) noexcept
   : m_characters(CreateCharacters()),
     m_table(CreateTable(key,CreateCharacters().size()))
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
+
 }
 
 std::vector<int> ribi::Encranger::CreateTestKeys() noexcept
@@ -245,52 +221,3 @@ std::vector<std::string> ribi::Encranger::GetVersionHistory() noexcept
     "2014-07-21: version 1.3: rigid testing"
   };
 }
-
-#ifndef NDEBUG
-void ribi::Encranger::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-  //Test Increase
-  {
-    const std::size_t sz { 5 };
-    std::vector<int> v(sz);
-    //std::for_each(v.begin(), v.end(), Increase() );
-    std::iota(v.begin(),v.end(),0);
-    for (std::size_t i=0; i!=sz; ++i) { assert( v[i] == static_cast<int>(i) ); }
-  }
-  {
-    const std::vector<std::string> v {
-      "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",
-      "a cde ghijklm opqrstuvwxyzabc efghijklmnopqrstuvwxyzabcdefghi klmnopqrstuvwxyz",
-      "a",
-      " a",
-      "a ",
-      " a ",
-      "  a  "
-    };
-    for (const std::string& s: v)
-    {
-      for (const int key: CreateTestKeys())
-      {
-        const Encranger e(key);
-        assert(e.Deencrypt(e.Encrypt(s)) == s);
-        //Test encryption with real, decryption with faker
-        const Encranger faker(key + 1);
-        if (faker.Deencrypt(e.Encrypt(s)) == s)
-        {
-          TRACE("ERROR");
-          TRACE(key);
-          TRACE(s);
-          TRACE("BREAK");
-        }
-        assert(faker.Deencrypt(e.Encrypt(s)) != s);
-      }
-    }
-  }
-}
-#endif

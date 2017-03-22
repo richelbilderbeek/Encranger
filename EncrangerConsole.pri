@@ -1,13 +1,12 @@
-INCLUDEPATH += \
-    ../Encranger
+INCLUDEPATH += $$PWD
 
 SOURCES += \
-    ../Encranger/encrangermaindialog.cpp \
-    ../Encranger/encrangermenudialog.cpp
+    $$PWD/encrangermaindialog.cpp \
+    $$PWD/encrangermenudialog.cpp
 
 HEADERS += \
-    ../Encranger/encrangermaindialog.h \
-    ../Encranger/encrangermenudialog.h
+    $$PWD/encrangermaindialog.h \
+    $$PWD/encrangermenudialog.h
 
 RESOURCES += \
-    ../Encranger/Encranger.qrc
+    $$PWD/Encranger.qrc

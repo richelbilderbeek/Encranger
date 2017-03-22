@@ -1,13 +1,13 @@
-include(../Encranger/EncrangerConsole.pri)
+include(EncrangerConsole.pri)
 
 SOURCES += \
-    ../Encranger/qtencrangermaindialog.cpp \
-    ../Encranger/qtencrangermenudialog.cpp
+    $$PWD/qtencrangermaindialog.cpp \
+    $$PWD/qtencrangermenudialog.cpp
 
 HEADERS += \
-    ../Encranger/qtencrangermaindialog.h \
-    ../Encranger/qtencrangermenudialog.h
+    $$PWD/qtencrangermaindialog.h \
+    $$PWD/qtencrangermenudialog.h
 
 FORMS    += \
-    ../Encranger/qtencrangermaindialog.ui \
-    ../Encranger/qtencrangermenudialog.ui
+    $$PWD/qtencrangermaindialog.ui \
+    $$PWD/qtencrangermenudialog.ui

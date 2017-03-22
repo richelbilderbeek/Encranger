@@ -1,23 +1,3 @@
-//---------------------------------------------------------------------------
-/*
-Encranger, encryption tool
-Copyright (C) 2009-2016 Richel Bilderbeek
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
-//---------------------------------------------------------------------------
-//From http://www.richelbilderbeek.nl/ToolEncranger.htm
-//---------------------------------------------------------------------------
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Weffc++"
 #pragma GCC diagnostic ignored "-Wunused-local-typedefs"
@@ -30,16 +10,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "encranger.h"
 #include "encrangermaindialog.h"
 #include "loopreader.h"
-#include "testtimer.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 int ribi::ToolEncrangerMenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
-
   const int argc = static_cast<int>(argv.size());
   if (argc == 1)
   {
@@ -119,8 +93,6 @@ ribi::About ribi::ToolEncrangerMenuDialog::GetAbout() const noexcept
     GetVersionHistory());
   a.AddLibrary("Encranger version: " + Encranger::GetVersion());
   a.AddLibrary("LoopReader version: " + LoopReader<int>::GetVersion());
-  a.AddLibrary("TestTimer version: " + TestTimer::GetVersion());
-  a.AddLibrary("Trace version: " + Trace::GetVersion());
   return a;
 }
 
@@ -163,24 +135,3 @@ std::vector<std::string> ribi::ToolEncrangerMenuDialog::GetVersionHistory() cons
     "2016-01-10: Version 3.0: moved to own GitHub",
   };
 }
-
-#ifndef NDEBUG
-void ribi::ToolEncrangerMenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  {
-    Encranger(42);
-    ToolEncrangerMainDialog();
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-  {
-    ToolEncrangerMenuDialog d;
-    d.Execute( {"Encranger", "-k", "123", "--text", "Hello World", "-s" } );
-    d.Execute( {"Encranger", "-k", "123", "--cipher", "bc30h3g8h287g", "--silent" } );
-  }
-}
-#endif
