@@ -1,5 +1,7 @@
 # Encranger
 
+[Go to the nicely rendered website](https://richelbilderbeek.github.io/Encranger/).
+
 Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
 ---|---|---
 master|[![Build Status](https://travis-ci.org/richelbilderbeek/Encranger.svg?branch=master)](https://travis-ci.org/richelbilderbeek/Encranger)|[![codecov.io](https://codecov.io/github/richelbilderbeek/Encranger/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/Encranger/branch/master)
