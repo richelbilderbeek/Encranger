@@ -1,11 +1,8 @@
 # Encranger
 
-[Go to the nicely rendered website](https://richelbilderbeek.github.io/Encranger/).
+[![Codecov](https://codecov.io/gh/richelbilderbeek/Encranger/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/Encranger)
 
-Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
----|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/Encranger.svg?branch=master)](https://travis-ci.org/richelbilderbeek/Encranger)|[![codecov.io](https://codecov.io/github/richelbilderbeek/Encranger/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/Encranger/branch/master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/Encranger.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/Encranger)|[![codecov.io](https://codecov.io/github/richelbilderbeek/Encranger/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/Encranger/branch/develop)
+[Go to the nicely rendered website](https://richelbilderbeek.github.io/Encranger/).
 
 Tool that demonstrates a simple encryption algorithm.
 
